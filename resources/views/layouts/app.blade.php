@@ -58,11 +58,9 @@
                                                      document.getElementById('logout-form').submit();">
                                             Mi Perfil
                                         </a>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Plantillas
-                                        </a>
+                                        <a href="{{ url('plantilla') }}">Plantillas  </a>
+                                            
+                                      
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
