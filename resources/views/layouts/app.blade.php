@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+     
            
 </head>
 <body>
@@ -35,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Inicio</a></li>
-                        <li><a href="{{ url('/') }}">Novedades</a></li>
+                        <li><a href="{{ url('descubre') }}">Descubre</a></li>
                             
                     </ul>
 
@@ -44,7 +46,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Ingresar</a></li>
-                            <li><a href="{{ route('register') }}">Registrarse</a></li>
+                            
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -53,14 +55,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Mi Perfil
+                                        <a href="{{ url('perfil') }}">Mi perfil  </a>
                                         </a>
-                                        <a href="{{ url('plantilla') }}">Plantillas  </a>
+                                        <a href="{{ url('planilla') }}">Generar Planilla Anual  </a>
                                             
-                                      
+                                        <a href="{{ url('planillaAnual  ') }}">Rellenar Planilla</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

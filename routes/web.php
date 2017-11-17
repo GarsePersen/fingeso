@@ -12,13 +12,37 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('plantilla', function () {
-    return view('plantilla');
+Route::get('planilla', function () {
+    return view('planilla');
+});
+
+Route::get('descubre', function () {
+    return view('descubre');
+});
+
+Route::get('perfil', function () {
+    return view('perfil');
+});
+
+Route::get('novedades', function () {
+    return view('novedades');
+});
+
+Route::get('verPlanilla', function () {
+    return view('verPlanilla');
+});
+
+Route::get('planillaAnual', function () {
+    return view('planillaAnual');
+});
+
+Route::get('subirArchivo', function () {
+    return view('subirArchivo');
 });

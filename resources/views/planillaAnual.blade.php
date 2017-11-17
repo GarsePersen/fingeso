@@ -1,6 +1,13 @@
 
 <!DOCTYPE html>
 <html>
+<title>Academia Usach</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 input[type=text], select {
     color: #3C3176;
@@ -28,11 +35,7 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
+
 /* The alert message box */
 .alert {
     padding: 20px;
@@ -109,88 +112,61 @@ div {
                 margin-bottom: 30px;
             }
 </style>
-<body>
+<body >
 
-<h3>Utilize los siguientes campos para rellenar su plantilla</h3>
+@extends('layouts.app')
+@section('content')
 
+<div class=container>
+    <h2>Utilize los siguientes campos para rellenar su planilla anual</h2>
 <div>
-                <div class="top-right links">
-                    <a href="{{ url('/home') }}">Inicio</a>
-</div>
+
   <form action="/action_page.php">
     
     <label for="fname">Primer Nombre</label>
-    <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+    <input type="text" id="fname" name="firstname" placeholder="Tu primer nombre...">
 
     <label for="lname">Apellido Paterno</label>
-    <input type="text" id="lname" name="lastname" placeholder="Tu apellido paterno..">
+    <input type="text" id="lname" name="lastname" placeholder="Tu apellido paterno...">
     <label for="lname">Apellido Materno</label>
-    <input type="text" id="lname" name="lastname" placeholder="Tu apellido materno..">
-
-    <label for="country">Fecha de publicación</label>
+    <input type="text" id="lname" name="lastname" placeholder="Tu apellido materno...">
+     <label for="country">Tipo de Actividad</label>
     <select name="DOBMonth">
-    <option> - Month - </option>
-    <option value="January">Enero</option>
-    <option value="Febuary">Febrero</option>
-    <option value="March">Marzo</option>
-    <option value="April">Abril</option>
-    <option value="May">Mayo</option>
-    <option value="June">Junio</option>
-    <option value="July">Julio</option>
-    <option value="August">Agosto</option>
-    <option value="September">Septiembrer</option>
-    <option value="October">Octubre</option>
-    <option value="November">Noviembre</option>
-    <option value="December">Diciembre</option>
-</select>
-<select name="Dia">
-    <option> - Día - </option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
-    <option value="19">19</option>
-    <option value="20">20</option>
-    <option value="21">21</option>
-    <option value="22">22</option>
-    <option value="23">23</option>
-    <option value="24">24</option>
-    <option value="25">25</option>
-    <option value="26">26</option>
-    <option value="27">27</option>
-    <option value="28">28</option>
-    <option value="29">29</option>
-    <option value="30">30</option>
-    <option value="31">31</option>
-</select>
-<select name="Anio">
-    <option> - Año - </option>
-    <option value="2017">2017</option>
-    
-</select>
-    <label for="lname">Observaciones</label>
+        <option> - Tipo - </option>
+        <option value="January">Investigación</option>
+        <option value="Febuary">Asistencia Técnica</option>
+        <option value="January">Perfeccionamiento</option>
+        <option value="Febuary">Administración Académica</option>
+        <option value="Febuary">Clase</option>
+
+        
+    </select>
+      <label for="fname">Horas Semanales Asignadas</label>
+    <input type="text" id="fname" name="firstname" placeholder="Horas Semanales...">
+     
+<label for="lname">Descripción</label>
+    <input type="text" id="lname" name="lastname" placeholder="Descripción..">
+      
+
+
+     
+
+   
+   
+
+<label for="lname">Observaciones</label>
     <input type="text" id="lname" name="lastname" placeholder="Escriba sus observaciones..">
       
+
+
+    
 
   <div class="links aceptar">
     <a href="{{ ('/home') }}">Aceptar</a>
      </div>
   </form>
 </div>
-
+</div>
+ @endsection
 </body>
 </html>
