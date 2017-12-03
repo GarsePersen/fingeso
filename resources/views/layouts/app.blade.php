@@ -61,13 +61,7 @@
                                     <span>Ingresar</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('register') }}">
-                                    <i class="fa fa-user-plus"></i>
-                                    <span>Registrarse</span>
-
-                                </a>
-                            </li>
+                            
 
                             @else
                             <li>
@@ -112,6 +106,8 @@
 
                                 </ul>
                             </li>
+                            @if(Auth::user() != null)
+                                @if(Auth::user()->roles[0]->id == 1)
                             <li>
 
                                 <a href="#">
@@ -122,7 +118,7 @@
                                     <li>
                                         <a href="planillaAnual" >
                                             <i class="fa fa-flash"></i>
-                                            <span>Generar plantilla</span>
+                                            <span>Generar plantilla anual</span>
                                         </a>
                                     </li>
                                     
@@ -146,8 +142,46 @@
 
                                 </ul>
                             </li>
-                            
+                                @endif
+                                
+                            @endif
+                            @if(Auth::user() != null)
+                                @if(Auth::user()->roles[0]->id == 2)
+                                     <li>
+                                            <a href="{{ url('registrarUsuario') }}">
+                                                 <i class="fa fa-user-plus"></i>
+                                                 <span>Registrar Usuario</span>
+
+                                            </a>
+                                        </li>
+                                         <li>
+                                            <a href="{{ url('registrarUsuario') }}">
+                                                 <i class="fa fa-users"></i>
+                                                 <span>Administrar Usuarios</span>
+
+                                            </a>
+                                        </li>
+                                           
+                                    @endif
+                                
+                            @endif
+
+                            @if(Auth::user() != null)
+                                @if(Auth::user()->roles[0]->id == 3)
+                                     <li>
+                                            <a href="{{ url('registrarUsuario') }}">
+                                                 <i class="fa fa-users"></i>
+                                                 <span>Docentes</span>
+
+                                            </a>
+                                        </li>
+                                           
+                                    @endif
+                                
+                            @endif
                             @endguest
+
+                            
                             
                             </ul>
 

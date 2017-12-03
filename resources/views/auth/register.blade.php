@@ -8,7 +8,7 @@
                 <div class="panel-heading">Registro de Docente</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="register">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -60,6 +60,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                         <div class="form-group">
+                        <label for="role" class="col-md-4 control-label">Tipo de Usuario</label>
+                            <div class="col-md-6">
+                            <select onchange = "" class="form-control " id="role" name = "role" required>
+                                <option value = "1" >Profesor</option>
+                                <option value = "3" >Comisión</option>
+                              </select>
+                          </div>
+                          </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

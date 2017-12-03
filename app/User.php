@@ -27,9 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function roles()
-    {
-      return $this->belongsToMany(Role::class);
+    public function roles(){
+        return $this->belongsToMany(Role::class,'users_roles','users_id','roles_id');
     }
     
     /**

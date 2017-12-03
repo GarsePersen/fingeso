@@ -36,6 +36,10 @@ Route::get('novedades', function () {
     return view('novedades');
 });
 
+Route::get('registrarUsuario', function () {
+    return view('auth/register');
+});
+
 Route::get('verPlanilla', function () {
     return view('verPlanilla');
 });
@@ -48,6 +52,8 @@ Route::get('subirArchivo', function () {
     return view('subirArchivo');
 });
 
+
+Route::post('register', 'UserController@store');
 
 Route::post('/actividades/add/post', 'ActividadController@store')->name('actividad.store');
 Route::get('/actividades/add', 'ActividadController@add')->name('actividad.add');
