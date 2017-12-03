@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
 <!DOCTYPE html>
 <html>
 <style>
@@ -111,6 +113,11 @@ div {
 </style>
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+            <div class="panel panel-default">
+
 <h3>Utilize los siguientes campos para rellenar su plantilla</h3>
 
 <div>
@@ -191,6 +198,9 @@ div {
      </div>
   </form>
 </div>
-
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

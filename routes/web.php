@@ -12,13 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('plantilla', function () {
     return view('plantilla');
 });
+
+Route::post('/actividades/add/post', 'ActividadController@store')->name('actividad.store');
+Route::get('/actividades/add', 'ActividadController@add')->name('actividad.add');
