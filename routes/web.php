@@ -19,8 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('planilla', function () {
-    return view('planilla');
+
+Route::get('actividad', function () {
+    return view('actividad');
 });
 
 Route::get('descubre', function () {
@@ -46,3 +47,8 @@ Route::get('planillaAnual', function () {
 Route::get('subirArchivo', function () {
     return view('subirArchivo');
 });
+
+
+Route::post('/actividades/add/post', 'ActividadController@store')->name('actividad.store');
+Route::get('/actividades/add', 'ActividadController@add')->name('actividad.add');
+

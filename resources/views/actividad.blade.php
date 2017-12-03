@@ -117,8 +117,12 @@ input[type=submit]:hover {
 @extends('layouts.app')
 @section('content')
 
+<div class="container">
+
+
+<h3>Utilize los siguientes campos para rellenar su actividad</h3>
+
 <div class=container>
-    <h2>Utilize los siguientes campos para rellenar su actividad realizada</h2>
 <div>
                 <div class="top-right links">
                     <a href="{{ url('/home') }}">Atrás</a>
@@ -175,6 +179,12 @@ input[type=submit]:hover {
      </div>
   </form>
 </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
 </div>
  @endsection
 </body>
