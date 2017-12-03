@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $arrayNames = ['Profesor','Admin','Comision'];
+         $arrayNames = ['Profesor','Admin','Comision','Director'];
                 for ($i=0; $i < count($arrayNames); $i++) { 
                     
                      DB::table('roles')->insert([

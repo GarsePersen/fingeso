@@ -66,6 +66,7 @@
                             <select onchange = "" class="form-control " id="role" name = "role" required>
                                 <option value = "1" >Profesor</option>
                                 <option value = "3" >Comisión</option>
+                                <option value = "4" >Director de Departamento</option>
                               </select>
                           </div>
                           </div>

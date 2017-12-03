@@ -180,6 +180,26 @@
                                 
                             @endif
                             @endguest
+                            @if(Auth::user() != null)
+                                @if(Auth::user()->roles[0]->id == 4)
+                                     <li>
+                                            <a href="{{ url('registrarUsuario') }}">
+                                                 <i class="fa fa-folder"></i>
+                                                 <span>Registros</span>
+
+                                            </a>
+                                        </li>
+                                         <li>
+                                            <a href="{{ url('registrarUsuario') }}">
+                                                 <i class="fa fa-folder"></i>
+                                                 <span>Acuerdo de Compromisos</span>
+
+                                            </a>
+                                        </li>
+                                           
+                                    @endif
+                                
+                            @endif
 
                             
                             
