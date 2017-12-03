@@ -32,6 +32,12 @@ Route::get('perfil', function () {
     return view('perfil');
 });
 
+Route::get('agregarCompromiso',function(){
+
+	return view('agregarCompromiso');
+
+});
+
 Route::get('novedades', function () {
     return view('novedades');
 });
@@ -54,6 +60,8 @@ Route::get('subirArchivo', function () {
 
 
 Route::post('register', 'UserController@store');
+Route::post('/agregarCompromiso', 'compromisoActividadController@guardarCompromiso')->name('guardar.compromiso');
+
 
 Route::post('/actividades/add/post', 'ActividadController@store')->name('actividad.store');
 Route::get('/actividades/add', 'ActividadController@add')->name('actividad.add');

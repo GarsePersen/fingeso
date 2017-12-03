@@ -142,6 +142,23 @@
 
                                 </ul>
                             </li>
+                            <li>
+
+                                <a href="#">
+                                    <i class="fa fa-folder"></i>
+                                    <span>Compromisos</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/agregarCompromiso" >
+                                            <i class="fa fa-plus"></i>
+                                            <span>Añadir compromisos</span>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
                                 @endif
                                 
                             @endif
