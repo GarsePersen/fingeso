@@ -72,24 +72,9 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="https://ianlunn.github.io/Hover/" >
+                                        <a href="{{ url('perfil') }}" >
                                             <i class="fa fa-flash"></i>
                                             <span>Detalles</span>
-                                        </a>
-                                    </li>
-                                    <li>
-
-                                        <a href="{{ url('perfil') }}">Mi perfil  </a>
-                                        </a>
-                                        
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-
-                                        <a href="/perfil">
-                                            <i class="fa fa-ellipsis-h"></i>
-                                            <span>Configurar Perfil</span>
                                         </a>
                                     </li>
                                     <li>
