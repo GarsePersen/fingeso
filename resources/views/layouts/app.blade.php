@@ -39,9 +39,7 @@
 
                 <div class="sidebar-nav">
                         <ul class="drawer" >
-                            <a href="/">
-                                <img src="{{ asset('images/logo.jpg') }}" width="100%">
-                            </a>
+                            
                             <li>
                                 <a href="{{ url('/') }}">
                                     <i class="fa fa-home"></i>
