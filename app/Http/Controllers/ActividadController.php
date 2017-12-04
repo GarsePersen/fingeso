@@ -29,4 +29,8 @@ class ActividadController extends Controller
     	$compromisos = compromiso_actividad::find($id);
     	return view('actividad',compact('compromisos'));
     }
+    public function actividadCompromiso($id){
+        $actividades = DB::table('actividad')->where('id_compromiso',$id)->get();
+        return view('verActividades',compact('actividades'));
+    }
 }

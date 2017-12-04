@@ -44,6 +44,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -82,6 +83,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -120,6 +122,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -159,6 +162,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -197,6 +201,7 @@
                              <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -235,6 +240,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>
@@ -273,6 +279,7 @@
                             <th>
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
                                 </div>
 
                             </th>

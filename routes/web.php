@@ -73,6 +73,10 @@ Route::get('verUsuariosComision', 'UserController@indexComision');
 
 Route::get('actividad/{id}','ActividadController@viewActividad')->name('actividad');
 Route::get('actividad','ActividadController@viewActividad');
+
+Route::get('verActividades/{id}','ActividadController@actividadCompromiso')->name('verActividades');
+Route::get('verActividades','ActividadController@actividadCompromiso');
+
 Route::post('actividad','ActividadController@agregarActividad')->name('guardar.actividad');
 
 Route::get('verCompromisos', 'verCompromisosController@viewCompromisos')->name('verCompromisos');
