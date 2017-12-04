@@ -18,6 +18,7 @@ class compromisoActividadController extends Controller
 	            'semestre' =>$request->Semestre,
 	            'hora_semana' =>$request->Horas_semana,
 	            'hora_semestre' => $request->Horas_semestre,
+	            'active' => false,
 	        ]);
 	        return back();
 	        

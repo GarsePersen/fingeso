@@ -22,11 +22,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -41,12 +42,26 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
-                            <th>
-                                <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
-                                    <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
-                                    <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
-                                </div>
 
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
+                            <th>
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
+                                <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
+                                    <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
+                                     <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
+                                </div>
+                                @endif
                             </th>
                         </tr>
                         @endif
@@ -61,11 +76,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -80,11 +96,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
-                            <th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
+                            <th> 
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
                         </tr>
@@ -100,11 +130,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -119,11 +150,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
                             <th>
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
 
@@ -140,11 +185,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -159,11 +205,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
                             <th>
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
                         </tr>
@@ -179,11 +239,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -198,11 +259,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
                              <th>
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
                         </tr>
@@ -218,11 +293,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -230,6 +306,7 @@
         <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
+                    
                      @foreach($compromisos as $compromiso)
                      @if($compromiso->tipo_actividad == 'Extension')
                         <tr>
@@ -237,11 +314,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
                             <th>
+                               @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
                         </tr>
@@ -257,11 +348,12 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th>Descripcion</th>
-                        <th>Hora Semana</th>
-                        <th>Hora Semestre</th>
-                        <th>Semestre</th>
-                        <th>Acciones</th>
+                        <th><font color="black">Descripcion </font></th>
+                        <th><font color="black">Horas Semanales </font></th>
+                        <th><font color="black">Horas Semestrales</font></th>
+                        <th><font color="black">Semestre</font></th>
+                        <th><font color="black">Estado</font></th>
+                        <th><font color="black">Acciones</font></th>
                     </tr>
                 </thead>
             </table>
@@ -276,11 +368,25 @@
                             <th> {{$compromiso->hora_semana}}</th>
                             <th> {{$compromiso->hora_semestre}} </th>
                             <th> {{$compromiso->semestre}} </th>
+                            @if($compromiso->active == true)
+                            <th> Aprobado </th>
+                            @else
+                            <th> Aún no aprobado </th>
+                            @endif
                             <th>
+                                @if($compromiso->active == false AND Auth::user()->roles[0]->id == 3)
+                                @else
                                 <div class="btn-group btn-group-xs" style="width: 200px;" role="group" aria-label="...">
+                                    @if(Auth::user()->roles[0]->id == 1)
                                     <a href="actividad/{{$compromiso->id}}"  type="button" class="btn btn-default">Agregar</a>
+                                    @endif
                                      <a href="verActividades/{{$compromiso->id}}"  type="button" class="btn btn-default">ver actividades</a>
+                                     @if(Auth::user()->roles[0]->id == 4)
+                                    <a href="aprobarCompromiso/{{$compromiso->id}}"  type="button" class="btn btn-default">Aprobar</a>
+                                    @endif
+                                    
                                 </div>
+                                @endif
 
                             </th>
                         </tr>

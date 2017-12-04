@@ -24,6 +24,12 @@ class UserController extends Controller
         return view('verUsuariosComision', compact('usuarios'));
     }
 
+    public function indexDirector()
+    {
+        $usuarios = User::all();
+        return view('verUsuariosDirector', compact('usuarios'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
