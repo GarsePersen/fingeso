@@ -18,6 +18,12 @@ class UserController extends Controller
         return view('verUsuarios', compact('usuarios'));
     }
 
+    public function indexComision()
+    {
+        $usuarios = User::all();
+        return view('verUsuariosComision', compact('usuarios'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -88,6 +94,15 @@ class UserController extends Controller
         $usr->save();
         $usuarios = User::all();
         return view('verUsuarios', compact('usuarios'));
+    }
+
+    public function calificar(Request $request)
+    {
+        $usr = User::find($request->idUsr);
+        $usr->calification = $request->calification;
+        $usr->save();
+        $usuarios = User::all();
+        return view('verUsuariosComision', compact('usuarios'));
     }
 
     /**

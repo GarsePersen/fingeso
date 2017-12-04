@@ -182,7 +182,7 @@
                             @if(Auth::user() != null)
                                 @if(Auth::user()->roles[0]->id == 3)
                                      <li>
-                                            <a href="{{ url('registrarUsuario') }}">
+                                            <a href="{{ url('verUsuariosComision') }}">
                                                  <i class="fa fa-users"></i>
                                                  <span>Docentes</span>
 

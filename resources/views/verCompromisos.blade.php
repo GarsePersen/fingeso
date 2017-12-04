@@ -16,6 +16,7 @@
 
 <form method="GET" style="border-top-style: solid;">
      <section style="top :50px;">
+
         <h1>Docencia</h1>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
@@ -283,6 +284,7 @@
         </div>
     </section>
     </form>
+      
        
 
 </body>

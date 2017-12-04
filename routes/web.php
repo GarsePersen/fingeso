@@ -68,6 +68,9 @@ Route::get('subirArchivo', function () {
     return view('subirArchivo');
 });
 
+Route::get('verUsuariosComision', 'UserController@indexComision');
+
+
 Route::get('actividad/{id}','ActividadController@viewActividad')->name('actividad');
 Route::get('actividad','ActividadController@viewActividad');
 Route::post('actividad','ActividadController@agregarActividad')->name('guardar.actividad');
@@ -75,10 +78,14 @@ Route::post('actividad','ActividadController@agregarActividad')->name('guardar.a
 Route::get('verCompromisos', 'verCompromisosController@viewCompromisos')->name('verCompromisos');
 Route::post('verCompromisos', 'verCompromisosController@viewCompromisos');
 
+Route::get('verCompromisosComision', 'verCompromisosController@viewCompromisosComision')->name('verCompromisos');
+Route::post('verCompromisosComision', 'verCompromisosController@viewCompromisosComision');
+
 
 Route::post('register', 'UserController@store');
 Route::post('/agregarCompromiso', 'compromisoActividadController@guardarCompromiso')->name('guardar.compromiso');
 
+Route::post('calificarUsuario', 'UserController@calificar');
 
 Route::post('getUserEdit', 'UserController@show');
 
