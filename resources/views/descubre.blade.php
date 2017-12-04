@@ -94,7 +94,7 @@ input[type=text]:focus {
         <span class="w3-right w3-opacity">hace 1 semana</span>
         <h4>Victor Parada</h4><br>
 
-        <p>Paper hacerca de ....</p>
+        <p>Paper acerca de ....</p>
           
         <button type="button" onclick="location.href='{{ url('verPlanilla') }}';" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-eye"></i>  Ver</button> 
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Agregar a favoritos</button> 
