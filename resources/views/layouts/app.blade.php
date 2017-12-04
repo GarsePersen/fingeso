@@ -123,23 +123,6 @@
 
                                 <a href="#">
                                     <i class="fa fa-folder"></i>
-                                    <span>Actividades</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="actividad" >
-                                            <i class="fa fa-plus"></i>
-                                            <span>Añadir actividades</span>
-                                        </a>
-                                    </li>
-                                    
-
-                                </ul>
-                            </li>
-                            <li>
-
-                                <a href="#">
-                                    <i class="fa fa-folder"></i>
                                     <span>Compromisos</span>
                                 </a>
                                 <ul>
@@ -147,6 +130,14 @@
                                         <a href="/agregarCompromiso" >
                                             <i class="fa fa-plus"></i>
                                             <span>Añadir compromisos</span>
+                                            
+                                        </a>
+                                      
+                                    </li>
+                                    <li>
+                                          <a href="/verCompromisos" >
+                                            <i class="fa fa-eye"></i>
+                                            <span>ver compromisos</span>
                                         </a>
                                     </li>
                                     

@@ -1,17 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;	
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\compromiso_actividad;
+use App\actividad;
 
-use Illuminate\Http\Request;
 
 class ActividadController extends Controller
 {
-    public function store(Request $request)
+    public function agregarActividad(Request $request)
     {
-    	return;
+
+    	actividad::create([
+	            'id_compromiso'=> $request->id_compromiso,
+	            'descripcion'=> $request->descripcion,
+	            'tipo_actividad' => $request->tipo_actividad,
+	            'semestre' =>$request->semestre,
+	            'hora_semana' =>$request->Horas_semana,
+	            'hora_semestre' => $request->Horas_semestre,
+	        ]);
+    	return back();
+    	
     }
-    public function add()
+    public function viewActividad($id)
     {
-    	return view('plantilla/addActividad');
+    	$compromisos = compromiso_actividad::find($id);
+    	return view('actividad',compact('compromisos'));
     }
 }

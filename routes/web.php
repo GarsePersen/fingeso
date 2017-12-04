@@ -24,6 +24,8 @@ Route::get('actividad', function () {
     return view('actividad');
 });
 
+
+
 Route::get('descubre', function () {
     return view('descubre');
 });
@@ -37,6 +39,14 @@ Route::get('agregarCompromiso',function(){
 	return view('agregarCompromiso');
 
 });
+
+Route::get('verCompromisos',function(){
+
+	return view('verCompromisos');
+
+});
+
+
 
 Route::get('novedades', function () {
     return view('novedades');
@@ -57,6 +67,13 @@ Route::get('planillaAnual', function () {
 Route::get('subirArchivo', function () {
     return view('subirArchivo');
 });
+
+Route::get('actividad/{id}','ActividadController@viewActividad')->name('actividad');
+Route::get('actividad','ActividadController@viewActividad');
+Route::post('actividad','ActividadController@agregarActividad')->name('guardar.actividad');
+
+Route::get('verCompromisos', 'verCompromisosController@viewCompromisos')->name('verCompromisos');
+Route::post('verCompromisos', 'verCompromisosController@viewCompromisos');
 
 
 Route::post('register', 'UserController@store');

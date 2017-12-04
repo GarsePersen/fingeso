@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 
 <!DOCTYPE html>
 <html>
@@ -8,6 +10,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@section('styles')
+@parent
 <style>
 input[type=text], select {
     color: #3C3176;
@@ -112,80 +116,42 @@ input[type=submit]:hover {
                 margin-bottom: 30px;
             }
 </style>
+@stop
 <body >
 
-@extends('layouts.app')
 @section('content')
 
-<div class="container">
-
-
-<h3>Utilize los siguientes campos para rellenar su actividad</h3>
 
 <div class=container>
+    <h2>Utilize los siguientes campos para agregar una actividad</h2>
 <div>
-                <div class="top-right links">
-                    <a href="{{ url('/home') }}">Atrás</a>
-</div>
-  <form action="/action_page.php">
-    
-    <label for="fname">Primer Nombre</label>
-    <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
-
-    <label for="lname">Apellido Paterno</label>
-    <input type="text" id="lname" name="lastname" placeholder="Tu apellido paterno..">
-    <label for="lname">Apellido Materno</label>
-    <input type="text" id="lname" name="lastname" placeholder="Tu apellido materno..">
-     <label for="country">Configuración</label>
-    <select name="DOBMonth">
-        <option> - Tipo - </option>
-        <option value="January">Paper</option>
-        <option value="Febuary">Clase</option>
-
-        
-    </select>
-    <select name="DOBMonth">
-        <option> - Visibilidad - </option>
-        <option value="January">Publico</option>
-        <option value="Febuary">Privado</option>
-
-        
-    </select>
-    
-<label for="lname">Descripción</label>
-    <input type="text" id="lname" name="lastname" placeholder="Descripción..">
-      
-<label for="lname">Horario (si es necesario)</label>
-    <input type="text" id="lname" name="lastname" placeholder="Horario..">
-      
-
-
-     <button type="button" onclick="location.href='{{ url('subirArchivo') }}';" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-upload"></i>  Subir Archivo</button>  <br>
-   
-
-
-
-   
-   
-
-<label for="lname">Observaciones</label>
-    <input type="text" id="lname" name="lastname" placeholder="Escriba sus observaciones..">
-      
-
     
 
-  <div class="links aceptar">
-    <a href="{{ ('/home') }}">Aceptar</a>
-     </div>
+  <form method="POST" action="{{ route('guardar.actividad') }}">
+                        {{ csrf_field() }}
+    <div >
+        <label for="Descripcion">Descripcion</label>
+        <input type="text" id="fname" name="descripcion" placeholder="Descripcion de la actividad" required="">
+    </div> 
+    <input type="hidden" name="id_compromiso" value="{{$compromisos->id}}">
+    <label for="Semestre">Semestre</label>
+    <input type = "text" name = "semestre" value = "{{$compromisos->semestre}}" readonly="readonly" required="">
+    <label for="country">Tipo de Actividad</label>
+    <input type="text" name="tipo_actividad" value = "{{$compromisos->tipo_actividad}}" readonly="readonly" required="">
+    <div class="form-group">
+    <label>Horas Semanales Asignadas</label>
+    <input type="number" min="1" id="fname" name="Horas_semana" placeholder="1" required="">
+    </div>
+    <div>
+    <label>Horas Semestrales Asignadas</label>
+    <input type="number" min="1" id="fname" name="Horas_semestre" placeholder="1" required="">
+    </div>
+    <button type="submit">Aceptar</button>
   </form>
 </div>
 </div>
 
-
-            </div>
-        </div>
-    </div>
-</div>
- @endsection
 </body>
 </html>
+
+ @endsection
