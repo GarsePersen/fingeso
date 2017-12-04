@@ -27,8 +27,11 @@ class ActividadController extends Controller
     }
     public function viewActividad($id)
     {
-    	$compromisos = compromiso_actividad::find($id);
-    	return view('actividad',compact('compromisos'));
+        if (is_numeric($id)){
+        	$compromisos = compromiso_actividad::find($id);
+        	return view('actividad',compact('compromisos'));
+        }
+        return view($id);
     }
 
     public function aprobarActividad($id)
@@ -39,7 +42,11 @@ class ActividadController extends Controller
         return view('home');
     }
     public function actividadCompromiso($id){
-        $actividades = DB::table('actividad')->where('id_compromiso',$id)->get();
-        return view('verActividades',compact('actividades'));
+        if (is_numeric($id)){
+            $actividades = DB::table('actividad')->where('id_compromiso',$id)->get();
+            return view('verActividades',compact('actividades'));
+        }
+        return view($id);
+        
     }
 }
