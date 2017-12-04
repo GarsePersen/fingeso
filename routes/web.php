@@ -55,6 +55,14 @@ Route::get('subirArchivo', function () {
 
 Route::post('register', 'UserController@store');
 
+Route::post('getUserEdit', 'UserController@show');
+
+Route::post('editUser', 'UserController@update');
+
+Route::post('removeUser', 'UserController@destroy');
+
+Route::get('getUsers', 'UserController@index');
+
 Route::post('/actividades/add/post', 'ActividadController@store')->name('actividad.store');
 Route::get('/actividades/add', 'ActividadController@add')->name('actividad.add');
 

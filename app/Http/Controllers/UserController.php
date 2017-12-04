@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $usuarios = User::all();
+        return view('verUsuarios', compact('usuarios'));
     }
 
     /**
@@ -38,10 +39,12 @@ class UserController extends Controller
         $u = User::create([
                 'name'=> $request->name,
                 'email' => $request->email,
+                'departament' => $request->departamento,
                 'password' => bcrypt($request->password),
             ]);
         $u->roles()->attach($request->role);   
-        return view('home');
+        $usuarios = User::all();
+        return view('verUsuarios', compact('usuarios'));
         
     }
 
@@ -51,9 +54,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+         $usuario = User::find($request->idUsr);
+         
+         return view('editarUsuario', compact('usuario'));
     }
 
     /**
@@ -74,9 +79,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $usr = User::find($request->idUsr);
+        $usr->name = $request->name;
+        $usr->password = bcrypt($request->password);
+        $usr->email = $request->email;
+        $usr->save();
+        $usuarios = User::all();
+        return view('verUsuarios', compact('usuarios'));
     }
 
     /**
@@ -85,8 +96,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $usr = User::find($request->idUsr);
+        echo $request->idUsr;
+        $usr->delete();
+        $usuarios = User::all();
+        return view('verUsuarios', compact('usuarios'));
     }
 }

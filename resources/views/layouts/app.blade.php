@@ -64,7 +64,10 @@
                             
 
                             @else
-                            <li>
+                            
+                            @if(Auth::user() != null)
+                                @if(Auth::user()->roles[0]->id == 1)
+                                <li>
 
                                 <a href="#">
                                     <i class="fa fa-user"></i>
@@ -82,15 +85,8 @@
                                         <a href="{{ url('perfil') }}">Mi perfil  </a>
                                         </a>
                                         
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
 
-                                        <a href="/perfil">
-                                            <i class="fa fa-ellipsis-h"></i>
-                                            <span>Configurar Perfil</span>
-                                        </a>
+                    
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -106,8 +102,6 @@
 
                                 </ul>
                             </li>
-                            @if(Auth::user() != null)
-                                @if(Auth::user()->roles[0]->id == 1)
                             <li>
 
                                 <a href="#">
@@ -155,14 +149,25 @@
                                             </a>
                                         </li>
                                          <li>
-                                            <a href="{{ url('registrarUsuario') }}">
+                                            <a href="{{ url('getUsers') }}">
                                                  <i class="fa fa-users"></i>
                                                  <span>Administrar Usuarios</span>
 
                                             </a>
                                         </li>
-                                           
+                                           <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                            <span>Salir</span>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+
+                                        </a>
+                                    </li>
                                     @endif
+                                    
+                                        
                                 
                             @endif
 
@@ -175,6 +180,17 @@
 
                                             </a>
                                         </li>
+                                        
+                                        <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                            <span>Salir</span>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+
+                                        </a>
+                                    </li>
                                            
                                     @endif
                                 
@@ -196,6 +212,17 @@
 
                                             </a>
                                         </li>
+                                        
+                                        <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                            <span>Salir</span>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+
+                                        </a>
+                                    </li>
                                            
                                     @endif
                                 
