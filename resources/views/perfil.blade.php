@@ -43,7 +43,7 @@ input[type=text]:focus {
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
-          <button  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Calificación: 6.5</button>
+          <button  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Calificación: {{Auth::user()->calification}}</button>
           <button  class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Apelar Calificación</button>
       
          

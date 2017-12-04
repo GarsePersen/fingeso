@@ -30,7 +30,9 @@ input[type=text]:focus {
         <div class="col-md-12 ">
  <div class="w2-col m7">
       @for($i = 1; $i < count($usuarios); $i++)
+      @if($usuarios[$i]->roles[0]->id == 1)
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        
         <h4>{{$usuarios[$i]->name}}</h4><br> 
 
         @if($usuarios[$i]->roles[0]->id == 3)
@@ -40,23 +42,32 @@ input[type=text]:focus {
         @endif
 
         <p>Mail: {{$usuarios[$i]->email}}</p>
+        @if($usuarios[$i]->calification == NULL)
+        <p>Nota: Sin Calificar </p>
+        @else
+        <p>Nota: {{$usuarios[$i]->calification}}</p>
+        @endif
 
         
-        <form method="post" action="getUserEdit" > 
+        <form method="post" action="verCompromisosComision" > 
         <input type = "hidden" name = "_token" value="{{ csrf_token()}}"> 
         <input type="hidden" name="idUsr" value="{{$usuarios[$i]->id}}"> 
-        <button type="submit"  class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-pencil"></i> Editar </button>
+        <button type="submit"  class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-check"></i> Ver Compromisos </button>
+        </form>  
+
+        <form method="post" action="calificarUsuario" > 
+        <input type = "hidden" name = "_token" value="{{ csrf_token()}}"> 
+        <input type="hidden" name="idUsr" value="{{$usuarios[$i]->id}}">
+        <label class="control-label"> Nota:</label> 
+        <input type="text" class="form-control" name="calification" id="calification"> <br>
+        <button type="submit"  class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-pencil"></i> Calificar </button>
         </form>  
 
 
-        <form method="post" action="removeUser" >
-        <input type = "hidden" name = "_token" value="{{ csrf_token()}}"> 
-        <input type="hidden" name="idUsr" value="{{$usuarios[$i]->id}}"> 
-        <button type="submit" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-ban"></i>  Eliminar </button> 
-        </form>   
 
 
       </div>
+      @endif
       @endfor
 
 

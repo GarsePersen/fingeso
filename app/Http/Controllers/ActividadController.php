@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\compromiso_actividad;
 use App\actividad;
+use App\User;
 
 
 class ActividadController extends Controller
@@ -28,6 +29,14 @@ class ActividadController extends Controller
     {
     	$compromisos = compromiso_actividad::find($id);
     	return view('actividad',compact('compromisos'));
+    }
+
+    public function aprobarActividad($id)
+    {
+        $compromiso = compromiso_actividad::find($id);
+        $compromiso->active = true;
+        $compromiso->save();
+        return view('home');
     }
     public function actividadCompromiso($id){
         $actividades = DB::table('actividad')->where('id_compromiso',$id)->get();

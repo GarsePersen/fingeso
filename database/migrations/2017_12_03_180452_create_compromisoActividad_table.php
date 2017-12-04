@@ -19,6 +19,7 @@ class CreateCompromisoActividadTable extends Migration
             $table->string('descripcion')->nullable();;
             $table->string('tipo_actividad')->nullable();
             $table->integer('semestre')->nullable();
+            $table->boolean('active')->nullable();
             $table->timestamps();
             $table->integer('hora_semana')->nullable();;
             $table->integer('hora_semestre')->nullable();;

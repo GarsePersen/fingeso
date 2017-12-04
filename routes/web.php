@@ -72,21 +72,35 @@ Route::get('planillaResumen', function () {
     return view('planillaResumen');
 });
 
+Route::get('verUsuariosComision', 'UserController@indexComision');
+
+Route::get('verUsuariosDirector', 'UserController@indexDirector');
+
+
 Route::get('actividad/{id}','ActividadController@viewActividad')->name('actividad');
 Route::get('actividad','ActividadController@viewActividad');
 
 Route::get('verActividades/{id}','ActividadController@actividadCompromiso')->name('verActividades');
 Route::get('verActividades','ActividadController@actividadCompromiso');
 
+Route::get('aprobarCompromiso/{id}','ActividadController@aprobarActividad')->name('verActividades');
+Route::get('aprobarCompromiso','ActividadController@aprobarActividad');
+
+Route::get('verActividades/{id}','ActividadController@actividadCompromiso')->name('verActividades');
+
 Route::post('actividad','ActividadController@agregarActividad')->name('guardar.actividad');
 
 Route::get('verCompromisos', 'verCompromisosController@viewCompromisos')->name('verCompromisos');
 Route::post('verCompromisos', 'verCompromisosController@viewCompromisos');
 
+Route::get('verCompromisosComision', 'verCompromisosController@viewCompromisosComision')->name('verCompromisos');
+Route::post('verCompromisosComision', 'verCompromisosController@viewCompromisosComision');
+
 
 Route::post('register', 'UserController@store');
 Route::post('/agregarCompromiso', 'compromisoActividadController@guardarCompromiso')->name('guardar.compromiso');
 
+Route::post('calificarUsuario', 'UserController@calificar');
 
 Route::post('getUserEdit', 'UserController@show');
 

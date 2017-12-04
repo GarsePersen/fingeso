@@ -21,5 +21,16 @@ class verCompromisosController extends Controller
 	        
 	}
 
+	public function viewCompromisosComision(Request $request)
+	{
+
+	    	$id = $request->idUsr;
+	    	$usuario = \App\User::find($id);
+	    	$compromisos = DB::table('compromisoActividad')->where('id_usuario',$id)->get();
+	       	return view('verCompromisos', compact('compromisos'));
+	        
+	        
+	}
+
 }
 	
