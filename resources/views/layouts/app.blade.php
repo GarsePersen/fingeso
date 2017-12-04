@@ -106,13 +106,13 @@
 
                                 <a href="#">
                                     <i class="fa fa-folder"></i>
-                                    <span>Plantilla</span>
+                                    <span>Planilla</span>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="planillaAnual" >
+                                        <a href="planillaResumen" >
                                             <i class="fa fa-flash"></i>
-                                            <span>Generar plantilla anual</span>
+                                            <span>Resumen</span>
                                         </a>
                                     </li>
                                     

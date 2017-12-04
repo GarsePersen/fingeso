@@ -68,6 +68,10 @@ Route::get('subirArchivo', function () {
     return view('subirArchivo');
 });
 
+Route::get('planillaResumen', function () {
+    return view('planillaResumen');
+});
+
 Route::get('actividad/{id}','ActividadController@viewActividad')->name('actividad');
 Route::get('actividad','ActividadController@viewActividad');
 

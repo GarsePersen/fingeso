@@ -1,7 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\compromiso_actividad;
+use App\actividad;
 
 /**
 *
@@ -22,5 +25,6 @@ class compromisoActividadController extends Controller
 	        return back();
 	        
 	}
+
 }
 	
