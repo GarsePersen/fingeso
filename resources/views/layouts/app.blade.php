@@ -39,9 +39,7 @@
 
                 <div class="sidebar-nav">
                         <ul class="drawer" >
-                            <a href="/">
-                                <img src="{{ asset('images/logo.jpg') }}" width="100%">
-                            </a>
+                            
                             <li>
                                 <a href="{{ url('/') }}">
                                     <i class="fa fa-home"></i>
@@ -75,12 +73,13 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="https://ianlunn.github.io/Hover/" >
+                                        <a href="{{ url('perfil') }}" >
                                             <i class="fa fa-flash"></i>
                                             <span>Detalles</span>
                                         </a>
                                     </li>
                                     <li>
+
 
                                         <a href="{{ url('perfil') }}">Mi perfil  </a>
                                         </a>
@@ -89,6 +88,7 @@
                     
                                     </li>
                                     <li>
+
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             <i class="fa fa-dot-circle-o"></i>
                                             <span>Salir</span>
@@ -130,6 +130,23 @@
                                         <a href="actividad" >
                                             <i class="fa fa-plus"></i>
                                             <span>Añadir actividades</span>
+                                        </a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </li>
+                            <li>
+
+                                <a href="#">
+                                    <i class="fa fa-folder"></i>
+                                    <span>Compromisos</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/agregarCompromiso" >
+                                            <i class="fa fa-plus"></i>
+                                            <span>Añadir compromisos</span>
                                         </a>
                                     </li>
                                     
